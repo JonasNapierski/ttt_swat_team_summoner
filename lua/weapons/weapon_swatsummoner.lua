@@ -57,6 +57,7 @@ end
       place_swat_npc_pistol(tracedata)
       place_swat_npc_pistol(tracedata)
       place_swat_npc_pistol(tracedata)
+      place_swat_npc_leader(tracedata)
       hook.Add("PlayerSpawn", "SetNPCDisposition", function (player)
         for _, npc in ipairs(ents.FindByClass("npc_combine_s")) do
           npc.AddEntityRelationship(player, D_HT, 99)
@@ -114,7 +115,32 @@ function place_swat_npc_shotgun( tracedata )
       sommoned_npc:AddRelationship("npc_combine_s D_NU 99")
       sommoned_npc:SetKeyValue("additionalequipment","weapon_shotgun")
 			sommoned_npc:Spawn()
-      sommoned_npc:SetNPCState(NPC_STATE_COMBAT)
+      sommoned_npc:SetNPCState(NPC_STATE_ALERT)
+      sommoned_npc:Activate()
+    end
+	local phys = sommoned_npc:GetPhysicsObject()
+	if ( !IsValid( phys ) ) then
+    sommoned_npc:Remove()
+    return
+  end
+end
+
+function place_swat_npc_leader( tracedata )
+	if ( CLIENT ) then return end
+
+	local sommoned_npc = ents.Create( "npc_combine_s" )
+
+	if ( !IsValid( sommoned_npc)  ) then return end
+
+    local spawnereasd = FindRespawnLocationCustom(tracedata.pos)
+    if spawnereasd == false then
+    else
+		  sommoned_npc:SetPos( spawnereasd )
+      sommoned_npc:AddRelationship("npc_combine_s D_NU 99")
+      sommoned_npc:SetKeyValue("additionalequipment","weapon_stunstick")
+      sommoned_npc:SetKeyValue("model","models/combine_super_soldier.mdl")
+			sommoned_npc:Spawn()
+      sommoned_npc:SetNPCState(NPC_STATE_ALERT)
       sommoned_npc:Activate()
     end
 	local phys = sommoned_npc:GetPhysicsObject()
@@ -127,7 +153,7 @@ end
 function place_swat_npc_pistol( tracedata )
 	if ( CLIENT ) then return end
 
-	local sommoned_npc = ents.Create( "npc_metropolice" )
+	local sommoned_npc = ents.Create( "npc_combine_s" )
 
 	if ( !IsValid( sommoned_npc)  ) then return end
 
@@ -135,10 +161,10 @@ function place_swat_npc_pistol( tracedata )
     if spawnereasd == false then
     else
 		  sommoned_npc:SetPos( spawnereasd )
-      sommoned_npc:AddRelationship("npc_metropolice D_NU 99")
-      sommoned_npc:SetKeyValue("additionalequipment","weapon_pistol")
+      sommoned_npc:AddRelationship("npc_combine_s D_NU 99")
+      sommoned_npc:SetKeyValue("additionalequipment","weapon_smg1")
 			sommoned_npc:Spawn()
-      sommoned_npc:SetNPCState(NPC_STATE_COMBAT)
+      sommoned_npc:SetNPCState(NPC_STATE_ALERT)
       sommoned_npc:Activate()
     end
 	local phys = sommoned_npc:GetPhysicsObject()
