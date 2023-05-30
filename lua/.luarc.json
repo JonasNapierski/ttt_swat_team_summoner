@@ -1,0 +1,32 @@
+{
+    "workspace.library": [
+        "/home/jp/.config/nvim",
+        "/etc/xdg/nvim",
+        "/home/jp/.local/share/nvim/site",
+        "/home/jp/.local/share/nvim/site/pack/packer/start/LuaSnip",
+        "/home/jp/.local/share/nvim/site/pack/packer/start/catppuccin",
+        "/home/jp/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+        "/home/jp/.local/share/nvim/site/pack/packer/start/completion-nvim",
+        "/home/jp/.local/share/nvim/site/pack/packer/start/glow.nvim",
+        "/home/jp/.local/share/nvim/site/pack/packer/start/lsp-status.nvim",
+        "/home/jp/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
+        "/home/jp/.local/share/nvim/site/pack/packer/start/mason.nvim",
+        "/home/jp/.local/share/nvim/site/pack/packer/start/nightfox.nvim",
+        "/home/jp/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+        "/home/jp/.local/share/nvim/site/pack/packer/start/nvim-lsp",
+        "/home/jp/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+        "/home/jp/.local/share/nvim/site/pack/packer/start/packer.nvim",
+        "/home/jp/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+        "/home/jp/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+        "/home/jp/.local/share/nvim/site/pack/packer/start/vim-dadbod",
+        "/home/jp/.local/share/nvim/site/pack/packer/start/vim-dadbod-ui",
+        "/usr/share/nvim/site",
+        "/usr/share/nvim/site/pack/packer/start/packer.nvim",
+        "/usr/share/nvim/runtime",
+        "/usr/lib/nvim",
+        "/home/jp/.local/share/nvim/site/pack/packer/start/catppuccin/after",
+        "/home/jp/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp/after",
+        "/usr/share/vim/vimfiles",
+        "${3rd}/luassert/library"
+    ]
+}

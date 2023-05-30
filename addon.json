@@ -1,0 +1,11 @@
+{
+  "title": "ttt_swat_team_summoner",
+  "type": "weapon",
+  "tags": ["build", "fun","ttt","swatteam","swat","weapon"],
+  "ignore":
+  [
+    "*.psd",
+    "*.vcproj",
+    "*.svn*"
+  ]
+}
