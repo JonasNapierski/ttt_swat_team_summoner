@@ -101,19 +101,20 @@ function FindRespawnLocationCustom(pos)
         return false
 end
 
-function place_swat_npc_shotgun( tracedata )
-	if ( CLIENT ) then return end
+-- TODO: npc_model 
+function spawn_swat_npc(tracedata, npc_type, npc_weapon, npc_model)
+  if ( CLIENT ) then return end
 
-	local sommoned_npc = ents.Create( "npc_combine_s" )
+	local sommoned_npc = ents.Create( npc_type )
 
 	if ( !IsValid( sommoned_npc)  ) then return end
-
+    
     local spawnereasd = FindRespawnLocationCustom(tracedata.pos)
     if spawnereasd == false then
     else
 		  sommoned_npc:SetPos( spawnereasd )
       sommoned_npc:AddRelationship("npc_combine_s D_NU 99")
-      sommoned_npc:SetKeyValue("additionalequipment","weapon_shotgun")
+      sommoned_npc:SetKeyValue("additionalequipment",npc_weapon)
 			sommoned_npc:Spawn()
       sommoned_npc:SetNPCState(NPC_STATE_ALERT)
       sommoned_npc:Activate()
@@ -123,6 +124,10 @@ function place_swat_npc_shotgun( tracedata )
     sommoned_npc:Remove()
     return
   end
+end
+
+function place_swat_npc_shotgun( tracedata )
+  spawn_swat_npc(tracedata,"npc_combine_s","weapon_shotgun")
 end
 
 function place_swat_npc_leader( tracedata )
